@@ -1,0 +1,48 @@
+<dock_design>
+     <SCOREFXNS>
+               <myscore weights=talaris2013_cst.wts/>
+     </SCOREFXNS>
+     <TASKOPERATIONS>
+               <DetectProteinLigandInterface name=edto design=1 cut1=6.0 cut2=8.0 cut3=10.0 cut4=12.0/>
+               <DetectProteinLigandInterface name=edto_repack design=1 cut1=6.0 cut2=6.0 cut3=10.0 cut4=12.0/>
+               <LimitAromaChi2 name=limchi2/>
+               <SetCatalyticResPackBehavior name=catres fix_catalytic_aa=0/>
+               <SetCatalyticResPackBehavior name=fixcat fix_catalytic_aa=1/>
+                <ProteinLigandInterfaceUpweighter name=up interface_weight=1.5/>
+     </TASKOPERATIONS>
+     <FILTERS>
+               <EnzScore name="allcst" score_type=cstE scorefxn=myscore whole_pose=1 energy_cutoff=10000000000000000000/>
+       </FILTERS>
+
+     <MOVERS>
+
+             <AddOrRemoveMatchCsts name=cstadd cst_instruction=add_new/>
+             <FavorNativeResidue name=fnr bonus=2/>
+
+
+             <EnzRepackMinimize name=desmin_nobb design=1 repack_only=0 scorefxn_minimize=myscore scorefxn_repack=soft_rep minimize_rb=1 minimize_sc=1 minimize_bb=0 cycles=1 minimize_lig=1 min_in_stages=0 backrub=0 task_operations=edto,limchi2,catres/>
+
+
+             <PredesignPerturbMover name=predock trans_magnitude=0.1 rot_magnitude=1 dock_trials=500/>
+             <EnzRepackMinimize name=desmin_wbb design=1 repack_only=0 scorefxn_minimize=myscore scorefxn_repack=soft_rep minimize_rb=1 minimize_sc=1 minimize_bb=1 cycles=1 minimize_lig=1 min_in_stages=0 backrub=0 task_operations=edto,limchi2,catres/>
+             <EnzRepackMinimize name=cstopt cst_opt=1 minimize_rb=1 minimize_sc=1 minimize_bb=0 cycles=1 min_in_stages=0 minimize_lig=1/>
+
+             <ParsedProtocol name=dock_des>
+             	<Add mover=predock/>
+                <Add mover=cstopt/>
+                <Add mover=desmin_wbb/>
+             </ParsedProtocol>
+
+	     <GenericMonteCarlo name=multi_dd mover_name=dock_des filter_name=allcst trials=10 sample_type=low temperature=0.6 drift=1/>
+
+</MOVERS>
+<APPLY_TO_POSE>
+</APPLY_TO_POSE>
+<PROTOCOLS>
+     <Add mover_name=cstadd/>
+     <Add mover_name=fnr/>
+     <Add mover_name=desmin_nobb/>
+     <Add mover_name=multi_dd/>
+</PROTOCOLS>
+</dock_design>
+
