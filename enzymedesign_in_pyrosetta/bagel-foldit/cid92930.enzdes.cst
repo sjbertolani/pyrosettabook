@@ -1,0 +1,37 @@
+# Chemical constraints for bagel with 4-nitrophenyl-beta-glucopyranoside
+# Alex Carlin, Siegel Lab, UCD
+
+# Glu 353 to LG1
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1     atom_name: C5 O2 C4
+  TEMPLATE::    ATOM_MAP:   1     residue3: LG1
+  TEMPLATE::    ATOM_MAP:   2     atom_name: OE2 CD CG
+  TEMPLATE::    ATOM_MAP:   2     residue1: E 
+  CONSTRAINT::  distanceAB: 2.0   0.25   500.0   1 
+  CONSTRAINT::  angle_A:    180.0 5.0   500.0   360 
+  CONSTRAINT::  angle_B:    120.0 5.0   500.0   360
+  CONSTRAINT::  torsion_B:  180.0 10.0  500.0   360
+CST::END
+
+# Glu 164 to LG1
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1     atom_name:  O2 C7 C9
+  TEMPLATE::    ATOM_MAP:   1     residue3:   LG1
+  TEMPLATE::    ATOM_MAP:   2     atom_name:  OE2 CD CG
+  TEMPLATE::    ATOM_MAP:   2     residue1:   E
+  CONSTRAINT::  distanceAB: 2.75  0.25        500.0   1   
+  CONSTRAINT::  angle_B:    120.0 5.0         500.0   360  
+  CONSTRAINT::  torsion_B:  180.0 10.0        500.0   360
+CST::END
+
+# Tyr 295 to glu 
+
+CST::BEGIN
+  TEMPLATE::    ATOM_MAP:   1   atom_name: OE2 CD CG
+  TEMPLATE::    ATOM_MAP:   1   residue1: E
+  TEMPLATE::    ATOM_MAP:   2   atom_type: OH
+  TEMPLATE::    ATOM_MAP:   2   residue1: Y
+  CONSTRAINT:: distanceAB: 3.0 0.5 500.0 1
+CST::END
