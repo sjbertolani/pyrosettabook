@@ -1,0 +1,239 @@
+<style>
+
+/*  Steve Bertolani 2017 for PyRosetta Jupyter Notebook project
+    Adapted from.....
+
+    Name:       Base16 3024 Dark
+    Author:     Jan T. Sott (http://github.com/idleberg)
+
+    CodeMirror template adapted for IPython Notebook by Nikhil Sonnad (https://github.com/nsonnad/base16-ipython-notebook)
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-chrome-devtools)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+*/
+// Text styling
+
+
+@font-face {
+//    font-family: "Computer Modern";
+//    src: url('http://9dbb143991406a7c655e-aa5fcb0a5a4ec34cff238a2d56ca4144.r56.cf5.rackcdn.com/cmunss.otf');
+//}
+
+
+
+/* GLOBALS */
+body {background-color: #ffcc99;}
+a {color: #01a0e4;}
+
+
+
+/* INTRO PAGE */
+.toolbar_info, .list_container {color: #d6d5d4;}
+
+/* NOTEBOOK */
+
+/* comment out this line to bring the toolbar back */
+//div#maintoolbar, div#header {display: none !important;}
+
+/* hides the numbers [1] at cell execution */
+div.prompt {display:none}
+
+/* sets external boundary color */
+div#notebook {border-top: none;
+	           background-color: #eee8d5;}
+
+
+div#notebook-container {
+        background-color: #fdf6e3;
+}
+
+div.input_prompt {color: #cdab53;}
+//div.output_prompt {color: #a16a94;}
+//div.output_prompt {color: #000000;}
+
+/* fills in the white margin for the code input */
+div.input_area {
+    background-color: #fdf6e3;
+    //  border-radius: 0px;
+    border: 0px solid #4a4543;
+
+}
+
+/* color of output cells in text */
+div.output_area pre {font-weight: normal; color: #657b83;}
+div.output_subarea {font-weight: normal; color: #657b83;}
+
+
+/* Styling for rendered html markdon*/
+.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
+  border: 1px  #a5a2a2 solid;
+  /*  color: #a5a2a2; */
+/* http://www.zovirl.com/2011/07/22/solarized_cheat_sheet/ */
+  color: #657b83;
+//  margin:auto;  
+
+}
+
+.rendered_html {
+//    margin:auto;
+}
+
+div.output_html { font-family: courier-new; }
+
+
+table.dataframe tr {border: 1px #a5a2a2;}
+
+div.cell.selected {border-radius: 0px;}
+div.cell.edit_mode {border-radius: 0px; border: thin solid #a16a94;}
+/* colorin for normal type cells*/
+div.text_cell_render, div.output_html {
+    color: #000000;
+
+}
+
+/* for all default text */
+div.text_cell_render p {
+    font-size: 120%;
+    text-align: left;
+//    padding-left: 2cm;
+}
+/* for emphasis */
+div.text_cell_render p em  {
+//    background-color: #eee8d5;
+    font-weight: bold;
+}
+
+
+//#span.ansiblack {color: #3a3432;}
+span.ansiblack {color: #d3d3d3;}
+span.ansiblue {color: #b5e4f4;}
+span.ansigray {color: #807d7c;}
+span.ansigreen {color: #01a252;}
+span.ansipurple {color: #a16a94;}
+span.ansired {color: #db2d20;}
+span.ansiyellow {color: #fded02;}
+
+div.output_stderr {background-color: #657b83;}
+
+/* controls the margin for stdout output */
+div.output_stdout {
+    background-color: #ffffff;
+    margin-left:100px;
+    margin-right:100px;
+}
+
+/* For things like the pandas dataframe output */
+div.output_result {
+    margin-left:100px;
+    margin-right:100px;
+    text-align: center;
+}
+
+div.output_stderr pre {color: #d6d5d4;}
+
+
+
+div.output_subarea.output_text { color: #657b83; }
+
+
+/* Next line defines color of code cell*/
+.cm-s-ipython.CodeMirror {background: #073642;
+			  color: #d6d5d4;
+			  margin-right: 100px;
+			  margin-left: 100px;
+			 }
+/* .cm-s-ipython div.CodeMirror-selected {background: #3a3432 !important;} */
+.cm-s-ipython div.CodeMirror-selected {background: #d3d3d3 !important;}
+.cm-s-ipython .CodeMirror-gutters {background: #090300; border-right: 0px;}
+.cm-s-ipython .CodeMirror-linenumber {color: #5c5855;}
+.cm-s-ipython .CodeMirror-cursor {border-left: 1px solid #807d7c !important;}
+
+.cm-s-ipython span.cm-comment {color: #cdab53;}
+.cm-s-ipython span.cm-atom {color: #a16a94;}
+.cm-s-ipython span.cm-number {color: #a16a94;}
+
+/* These define how to color the actual python code*/
+.cm-s-ipython span.cm-property, .cm-s-ipython span.cm-attribute {color: #268bd2;}
+.cm-s-ipython span.cm-keyword {color: #b58900;}
+.cm-s-ipython span.cm-string {color: #dc322f;}
+.cm-s-ipython span.cm-operator {color: #cdab53;}
+.cm-s-ipython span.cm-builtin {color: #a16a94;}
+
+.cm-s-ipython span.cm-variable {color: #268bd2;}
+.cm-s-ipython span.cm-variable-2 {color: #01a0e4;}
+.cm-s-ipython span.cm-def {color: #e8bbd0;}
+.cm-s-ipython span.cm-error {background: #db2d20; color: #807d7c;}
+.cm-s-ipython span.cm-bracket {color: #a5a2a2;}
+.cm-s-ipython span.cm-tag {color: #db2d20;}
+.cm-s-ipython span.cm-link {color: #a16a94;}
+
+.cm-s-ipython .CodeMirror-matchingbracket { text-decoration: underline; color: #d6d5d4 !important;}
+
+/* color just the h1 headers */
+.text_cell_render h1 {
+    font-weight: 200;
+    font-size: 30pt;
+    line-height: 100%;
+    color:#000000;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    display: block;
+    white-space: wrap;
+
+    border-bottom: 8px solid #57c4d0;
+
+    margin:auto;
+
+}
+
+/* used for commons disclaimer */
+.text_cell_render h4 {
+    font-size:100%;
+    line-height: 100%;
+    color:#000000;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    margin-left: 200px;
+    margin-right: 200px;
+    display: block;
+    white-space: wrap;
+
+//    margin:auto;
+
+}
+
+
+/* for subheaders */
+.text_cell_render h2 {
+    font-size:150%;
+    line-height: 100%;
+    color:#000000;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    display: block;
+    white-space: wrap;
+    border-bottom: 4px solid #57c4d0;
+}
+
+
+/* for sections */
+.text_cell_render h3 {
+    font-size:110%;
+    line-height: 100%;
+    color:#000000;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    display: block;
+    white-space: wrap;
+    margin:auto;
+}
+
+
+/* center the output plotts */
+.output_png {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+</style>
