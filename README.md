@@ -1,3 +1,9 @@
+##Update - A team of talented people made the pyrosetta notebooks that I had only dreamed of having. Many thanks to that team for the wonderful product they created. My contributions were very modest & I only hope to highlight their significant work. 
+
+See https://github.com/RosettaCommons/PyRosetta.notebooks
+& https://www.preprints.org/manuscript/202002.0097/v1
+
+
 #This is an initial organization of the code examples that I have been working on
  this is in preparation for working on a full online book version
 This code is a mix of old and new pyrosetta bindings.
