@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Local notebook and Rosetta outputs
+*.log
+*.out
+*.sc
+*_0001.pdb
+
+# macOS
+.DS_Store
